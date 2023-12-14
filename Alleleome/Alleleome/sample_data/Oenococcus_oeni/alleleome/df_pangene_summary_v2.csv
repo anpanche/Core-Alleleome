@@ -1,0 +1,11 @@
+Gene,Non-unique Gene name,Annotation,No. isolates,No. sequences,Avg sequences per isolate,Genome Fragment,Order within Fragment,Accessory Fragment,Accessory Order with Fragment,QC,Min group size nuc,Max group size nuc,Avg group size nuc,locus_tag,pangenome_class,pangenome_class_2
+group_1084,,"ABC-type antimicrobial peptide transport system, ATPase component",72,72,1.0,166,2177,,,,284,698,618,LIFCEPFD_02490,core,Core
+group_1085,,D-Ala-teichoic acid biosynthesis protein (putative),72,72,1.0,166,2189,,,,146,146,146,LIFCEPFD_02620,core,Core
+expZ,,"ABC transporter, ATP-binding protein",72,72,1.0,166,2302,,,,401,833,435,LIFCEPFD_03450,core,Core
+group_1101,,hypothetical protein,72,72,1.0,166,2364,,,,116,125,124,LIFCEPFD_04070,core,Core
+group_1167,,putative amidophosphoribosyltransferase,72,72,1.0,166,1929,,,,323,680,596,LIFCEPFD_13260,core,Core
+group_1597,,N-acetylmuramoyl-L-alanine amidase,71,71,1.0,166,2582,144.0,2.0,,590,947,919,LIFCEPFD_05200,softcore,Accessory
+group_1599,,hypothetical protein,71,71,1.0,166,2575,34.0,7.0,,122,821,348,LIFCEPFD_05240,softcore,Accessory
+group_1610,,D-serine ammonia-lyase,71,71,1.0,166,3093,1.0,1579.0,,758,1622,1362,LIFCEPFD_05850,softcore,Accessory
+group_1649,,aromatic amino acid aminotransferase apoenzyme,71,71,1.0,166,3255,148.0,1.0,,983,1172,1167,LIFCEPFD_06900,softcore,Accessory
+group_1666,,hypothetical protein,71,71,1.0,166,3374,22.0,10.0,,164,287,273,LIFCEPFD_07730,softcore,Accessory
