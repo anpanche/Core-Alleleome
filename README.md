@@ -42,7 +42,7 @@ For more detailed information, refer to our publication:
    ```
 2. Navigate to the Alleleome directory:
    ```
-   cd PAN-Alleleome
+   cd Core-Alleleome
    ```
 3. Install the package:
    ```
