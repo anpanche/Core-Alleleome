@@ -42,7 +42,7 @@ For more detailed information, refer to our publication:
    ```
 2. Navigate to the Alleleome directory:
    ```
-   cd Alleleome
+   cd PAN-Alleleome
    ```
 3. Install the package:
    ```
@@ -63,7 +63,7 @@ To analyze your species data:
    ```
    Alleleome --path1 path/to/pangenome_alignments --path2 path/to/alleleome
    ```
-Note: Ensure to execute the command within the Alleleome package directory.
+
 
 ## Features
 Alleleome introduces the concept of "ORF alleleome," encapsulating the gene alleles found across all strains of a species, thus providing a comprehensive view of genome-scale sequence variations. This analysis can be instrumental in understanding sequence diversity characteristics and natural selection processes across different species within a family. The study of the alleleome offers insights into the genetic basis of natural selection in a species.
