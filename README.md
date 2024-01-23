@@ -38,7 +38,7 @@ For more detailed information, refer to our publication:
 #### Using GitHub Repository
 1. Clone the repository:
    ```
-   git clone https://github.com/anpanche/PAN-Alleleome.git
+   git clone https://github.com/anpanche/Core-Alleleome.git
    ```
 2. Navigate to the Alleleome directory:
    ```
