@@ -8,6 +8,7 @@ from . import (
     QCQA_2,
     QCQA_3,
     QCQA_4,
+    __version__,
     amino_acid_sequence_alignment,
     build_consensus_sequence,
     codon_mutations,
@@ -48,6 +49,10 @@ def main():
             action="store_true",
             help="Log message will be printed to the terminal instead of a file.",
         )
+        parser.add_argument(
+            "--version", action="version", version="%(prog)s " + __version__
+        )
+
         args = parser.parse_args()
 
         if args.log_to_terminal:

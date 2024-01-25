@@ -133,6 +133,7 @@ options:
   --path2 PATH2      Path argument 2
   --table TABLE      Path to a custom CSV pangene summary table. If not provided, a default table will be used.
   --log_to_terminal  Log message will be printed to the terminal instead of a file.
+  --version          show program's version number and exit
 ```
 
 ## Features
