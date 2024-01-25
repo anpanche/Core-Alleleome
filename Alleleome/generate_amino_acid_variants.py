@@ -179,7 +179,9 @@ def generate_amino_acid_vars(
             blast_output_file_path = blast_file_name / (
                 "amino_acid_blast_out_" + blast_output_file + ".xml"
             )
-            gene = blast_output_file.replace(blast_file_name, "").replace(".xml", "")
+            gene = blast_output_file.replace(str(blast_file_name), "").replace(
+                ".xml", ""
+            )
 
             for record in NCBIXML.parse(open(blast_output_file_path)):
                 if len(record.alignments) > 0:

@@ -1,4 +1,5 @@
-# Alleleome generation step II- Alignment of each allele sequnces (amino acid sequence) of each gene with consensus sequence using BLASTp.
+# Alleleome generation step II
+# Alignment of each allele sequnces (amino acid sequence) of each gene with consensus sequence using BLASTp.
 import logging
 import subprocess
 from pathlib import Path

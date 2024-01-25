@@ -52,7 +52,7 @@ def nucleotide_seq_align(
                 args = (
                     blast_path,
                     "-query",
-                    pangenome_alignments_dir_path / query / "input" + "pan_genes.fna",
+                    pangenome_alignments_dir_path / query / "input" / "pan_genes.fna",
                     "-subject",
                     pangenome_alignments_dir_path
                     / query
