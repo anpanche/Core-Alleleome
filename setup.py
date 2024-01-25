@@ -42,7 +42,7 @@ install_mafft()
 
 setup(
     name="Alleleome",
-    version="0.1",
+    version="0.1.0",
     packages=find_packages(),
     install_requires=['pandas == 2.0.0','numpy==1.23.5','biopython == 1.81',
     ],  
