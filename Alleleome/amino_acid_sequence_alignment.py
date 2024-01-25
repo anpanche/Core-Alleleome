@@ -44,20 +44,21 @@ def amino_acid_seq_align(
         for r in range(len(core_aa_query_list)):
             query = core_aa_query_list[r]
             if pd.isnull(query) is False:
-                out_file_name =
+                out_file_name = (
                     pangenome_alignments_dir_path
                     / query
                     / "output"
-                    / ("amino_acid_"
-                    + "blast_out_"
-                    + query
-                    + ".xml")
+                    / ("amino_acid_" + "blast_out_" + query + ".xml")
+                )
                 args = (
                     blast_path,
                     "-query",
                     pangenome_alignments_dir_path / query / "input" / "pan_genes.faa",
                     "-subject",
-                    pangenome_alignments_dir_path / query / "input" / ("amino_acid_consensus_" + query + ".faa"),
+                    pangenome_alignments_dir_path
+                    / query
+                    / "input"
+                    / ("amino_acid_consensus_" + query + ".faa"),
                     "-outfmt",
                     "5",
                 )

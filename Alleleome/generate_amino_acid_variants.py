@@ -1,6 +1,5 @@
 # Alleleome generation step III- Parsing the results and generating the amino acid mutations
 import logging
-import os
 from itertools import groupby
 from operator import itemgetter
 from pathlib import Path
@@ -177,8 +176,8 @@ def generate_amino_acid_vars(
             blast_file_name = (
                 pangenome_alignments_dir_path / blast_output_file / "output"
             )
-            blast_output_file_path =
-                blast_file_name / ("amino_acid_blast_out_" + blast_output_file + ".xml"
+            blast_output_file_path = blast_file_name / (
+                "amino_acid_blast_out_" + blast_output_file + ".xml"
             )
             gene = blast_output_file.replace(blast_file_name, "").replace(".xml", "")
 
@@ -283,9 +282,7 @@ def generate_amino_acid_vars(
 
         gene_var_df = pd.DataFrame(all_mutations)
 
-        gene_var_df.to_csv(
-            alleleome_dir_path / "pan_amino_acid_vars_df.csv"
-        )
+        gene_var_df.to_csv(alleleome_dir_path / "pan_amino_acid_vars_df.csv")
         logging.info(
             "Completed generate_amino_acid_vars in generate_amino_acid_variants"
         )
