@@ -1,0 +1,8 @@
+log/
+Alleleome.egg-info/
+Alleleome/__pycache__/
+build/
+Alleleome/sample_data/
+tests/__pycache__/
+resources/mafft-7.505-with-extensions/
+resources/ncbi-blast-2.14.0+/
