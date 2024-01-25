@@ -42,3 +42,6 @@ jobs:
     - name: Test with pytest
       run: |
         pytest
+    - name: Full Run Alleleome
+      run: |
+        Alleleome --path1 Alleleome/sample_data/Oenococcus_oeni/pangenome_alignments --path2 output_dir --table Alleleome/sample_data/Oenococcus_oeni/alleleome/df_pangene_summary_v2.csv
