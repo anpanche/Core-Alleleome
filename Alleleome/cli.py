@@ -33,16 +33,20 @@ logging.basicConfig(
 def main():
     logging.info("Application started")
     try:
-        parser = argparse.ArgumentParser(description="Alleleome")
+        parser = argparse.ArgumentParser(
+            description="Alleleome - Explore and analyze natural sequence variations within the Open Reading Frames (ORFs) of alleles of core genes in a species pan-genome."
+        )
         parser.add_argument("--path1", help="Path argument 1")
         parser.add_argument("--path2", help="Path argument 2")
         parser.add_argument(
-            "--table", help="Path to custom CSV pangene summary table", default=None
+            "--table",
+            help="Path to a custom CSV pangene summary table. If not provided, a default table will be used.",
+            default=None,
         )
         parser.add_argument(
             "--log_to_terminal",
             action="store_true",
-            help="Log output to terminal instead of file",
+            help="Log message will be printed to the terminal instead of a file.",
         )
         args = parser.parse_args()
 

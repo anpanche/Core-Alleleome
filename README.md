@@ -118,6 +118,22 @@ To analyze your species data:
    Alleleome --path1 path/to/pangenome_alignments --path2 path/to/alleleome
    ```
 
+### Custom parameters
+You can find the full usage and parameters of `Alleleome` by using the `--help` function:
+```bash
+$ Alleleome --help
+
+usage: Alleleome [-h] [--path1 PATH1] [--path2 PATH2] [--table TABLE] [--log_to_terminal]
+
+Alleleome - Explore and analyze natural sequence variations within the Open Reading Frames (ORFs) of alleles of core genes in a species pan-genome.
+
+options:
+  -h, --help         show this help message and exit
+  --path1 PATH1      Path argument 1
+  --path2 PATH2      Path argument 2
+  --table TABLE      Path to a custom CSV pangene summary table. If not provided, a default table will be used.
+  --log_to_terminal  Log message will be printed to the terminal instead of a file.
+```
 
 ## Features
 Alleleome introduces the concept of "ORF alleleome," encapsulating the gene alleles found across all strains of a species, thus providing a comprehensive view of genome-scale sequence variations. This analysis can be instrumental in understanding sequence diversity characteristics and natural selection processes across different species within a family. The study of the alleleome offers insights into the genetic basis of natural selection in a species.
@@ -141,4 +157,3 @@ Key features include:
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
