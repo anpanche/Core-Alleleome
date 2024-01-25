@@ -29,22 +29,76 @@ For more detailed information, refer to our publication:
 
 ## Getting Started
 
-### Prerequisites
+#### Prerequisites
 - Alleleome is tested and confirmed for Linux systems with the Conda package manager.
 - Requires Python version 3.10 or higher.
 - For optimal performance, especially when processing a large dataset, such as 1400 core genes and their respective alleles across 3400 strains, a high RAM capacity is strongly recommended.
+- Git Large File Storage (Git LFS) must be installed for handling large files in the repository. See the Git LFS Installation section below for instructions.
+
+### Git LFS Installation
+This repository uses Git Large File Storage (Git LFS) to manage large files. To properly clone and use this repository, please ensure you have Git LFS installed.
+
+1. Install Git LFS:
+   - You can install Git LFS from [git-lfs.github.com](https://git-lfs.github.com/) or use a package manager. For example, on Ubuntu, you can use:
+     ```bash
+     sudo apt-get install git-lfs
+     ```
+
+2. Initialize Git LFS:
+   - After installing, set up Git LFS in your repository:
+     ```bash
+     git lfs install
+     ```
+
+3. Clone the Repository with LFS:
+   - To clone the repository and download the LFS files, use:
+     ```bash
+     git clone https://github.com/anpanche/Core-Alleleome.git
+     git lfs pull
+     ```
+
+4. Update Existing Clone:
+   - If you have already cloned the repository without LFS, run:
+     ```bash
+     git lfs pull
+     ```
+   - This command will download the actual content of the large files.
+
+### Creating a Virtual Environment
+
+Before installing Alleleome, it's recommended to create a virtual environment. This helps to manage dependencies and isolate the project.
+
+1. Create the Virtual Environment:
+   - Run the following command to create a virtual environment named `env` (you can choose any name):
+     ```bash
+     python3 -m venv env
+     ```
+
+2. Activate the Virtual Environment:
+
+   - On Linux or macOS, activate the virtual environment by running:
+     ```bash
+     source env/bin/activate
+     ```
+
+3. Deactivate the Virtual Environment:
+   - You can deactivate the virtual environment after the job completion by running:
+     ```bash
+     deactivate
+     ```
 
 ### Installation
 #### Using GitHub Repository
-1. Clone the repository:
-   ```
-   git clone https://github.com/anpanche/Core-Alleleome.git
-   ```
+
+1. Clone the repository (ensure Git LFS is set up as described above).
+
 2. Navigate to the Alleleome directory:
    ```
    cd Core-Alleleome
    ```
-3. Install the package:
+3. Activate the virtual environment as instructed above.
+
+4. Install the package:
    ```
    pip install .
    ```
