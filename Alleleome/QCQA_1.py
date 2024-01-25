@@ -4,7 +4,6 @@ from pathlib import Path
 import pandas as pd
 from Bio import SeqIO
 
-
 def process_nucleotide_sequences(
     pangenome_alignments_dir_path, alleleome_dir_path, pangene_summary_csv=None
 ):

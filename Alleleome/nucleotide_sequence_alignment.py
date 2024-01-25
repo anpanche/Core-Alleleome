@@ -13,6 +13,7 @@ def nucleotide_seq_align(
 ):
     try:
         logging.info("Starting nucleotide_seq_align in nucleotide_sequence_alignment")
+        pangenome_alignments_dir_path = Path(pangenome_alignments_dir_path)
         alleleome_dir_path = Path(alleleome_dir_path)
         alleleome_dir_path.mkdir(parents=True, exist_ok=True)
 
@@ -42,11 +43,8 @@ def nucleotide_seq_align(
         for r in range(len(core_na_query_list)):
             query = core_na_query_list[r]
             if pd.isnull(query) is False:
-                out_file_name = (
-                    pangenome_alignments_dir_path
-                    + query
-                    + "/output/"
-                    + "nucleotide_"
+                out_file_name = 
+                    pangenome_alignments_dir_path / query / "output" / ("nucleotide_"
                     + "blast_out_"
                     + query
                     + ".xml"
@@ -54,14 +52,14 @@ def nucleotide_seq_align(
                 args = (
                     blast_path,
                     "-query",
-                    pangenome_alignments_dir_path + query + "/input/" + "pan_genes.fna",
+                    pangenome_alignments_dir_path / query / "input" + "pan_genes.fna",
                     "-subject",
                     pangenome_alignments_dir_path
+                    / query
+                    / "input"
+                    / ("nucleotide_consensus_"
                     + query
-                    + "/input/"
-                    + "nucleotide_consensus_"
-                    + query
-                    + ".fna",
+                    + ".fna"),
                     "-outfmt",
                     "5",
                 )

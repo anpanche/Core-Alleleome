@@ -45,6 +45,7 @@ def build_consensus(
                 na_allele, k, "nucleotide", pangenome_alignments_dir_path
             )
         logging.info("Completed build_consensus in build_consensus_sequence")
+
     except Exception as e:
         logging.error(f"Error in build_consensus in build_consensus_sequence: {e}")
         raise
@@ -71,6 +72,7 @@ def generate_consensus(allele, k, type, pangenome_alignments_dir_path):
         / "output"
         / ("mafft_" + file_suffix + "_" + k + ".fasta")
     )
+
     with open(mafft_out_file, "w") as handle:
         handle.write(stdout)
 

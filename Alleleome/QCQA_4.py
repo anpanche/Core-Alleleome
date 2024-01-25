@@ -18,7 +18,7 @@ def process_core_genes(
     """
     try:
         logging.info("Starting process_core_genes in QCQA_4")
-
+        pangenome_alignments_dir_path = Path(pangenome_alignments_dir_path)
         # Read core genes data
         alleleome_dir_path = Path(alleleome_dir_path)
         alleleome_dir_path.mkdir(parents=True, exist_ok=True)
@@ -50,17 +50,17 @@ def process_core_genes(
         for gene in core_gene_list:
             # Copy gene sequence files if gene not in new_gene_list
             if gene not in new_gene_list:
-                aa_allele_path = pangenome_alignments_dir_path + gene + "/input/"
-                aa_file = aa_allele_path + "pangenes.faa"
-                new_file = aa_allele_path + "pan_genes.faa"
-                na_file = aa_allele_path + "pangenes.fna"
-                new_na_file = aa_allele_path + "pan_genes.fna"
+                aa_allele_path = pangenome_alignments_dir_path / gene / "input"
+                aa_file = aa_allele_path / "pangenes.faa"
+                new_file = aa_allele_path / "pan_genes.faa"
+                na_file = aa_allele_path / "pangenes.fna"
+                new_na_file = aa_allele_path / "pan_genes.fna"
                 shutil.copyfile(aa_file, new_file)
                 shutil.copyfile(na_file, new_na_file)
 
             # Create output directory for the gene
-            output_path = os.path.join(pangenome_alignments_dir_path, gene, "output")
-            os.makedirs(output_path, exist_ok=True)
+            output_path = pangenome_alignments_dir_path / gene / "output"
+            output_path.mkdir(exist_ok=True, parents=True)
         logging.info("Completed process_core_genes in QCQA_4")
     except Exception as e:
         logging.error(f"Error in process_core_genes in QCQA_4: {e}")

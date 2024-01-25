@@ -152,6 +152,7 @@ def generate_amino_acid_vars(
         logging.info(
             "Starting generate_amino_acid_vars in generate_amino_acid_variants"
         )
+        pangenome_alignments_dir_path = Path(pangenome_alignments_dir_path)
         alleleome_dir_path = Path(alleleome_dir_path)
         alleleome_dir_path.mkdir(parents=True, exist_ok=True)
 
@@ -174,10 +175,10 @@ def generate_amino_acid_vars(
 
         for blast_output_file in core_aa_query_list:
             blast_file_name = (
-                pangenome_alignments_dir_path + blast_output_file + "/output/"
+                pangenome_alignments_dir_path / blast_output_file / "output"
             )
-            blast_output_file_path = (
-                blast_file_name + "amino_acid_blast_out_" + blast_output_file + ".xml"
+            blast_output_file_path =
+                blast_file_name / ("amino_acid_blast_out_" + blast_output_file + ".xml"
             )
             gene = blast_output_file.replace(blast_file_name, "").replace(".xml", "")
 
@@ -283,11 +284,12 @@ def generate_amino_acid_vars(
         gene_var_df = pd.DataFrame(all_mutations)
 
         gene_var_df.to_csv(
-            os.path.join(alleleome_dir_path, "pan_amino_acid_vars_df" + ".csv")
+            alleleome_dir_path / "pan_amino_acid_vars_df.csv"
         )
         logging.info(
             "Completed generate_amino_acid_vars in generate_amino_acid_variants"
         )
+
     except Exception as e:
         logging.error(
             f"Error in generate_amino_acid_vars in generate_amino_acid_variants: {e}"
