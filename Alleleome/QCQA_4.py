@@ -27,7 +27,7 @@ def process_core_genes(pangenome_alignments_dir_path,alleleome_dir_path):
         for gene in core_gene_list:
             # Copy gene sequence files if gene not in new_gene_list
             if gene not in new_gene_list:
-                aa_allele_path = pangenome_alignments_dir_path + gene + '/input/' 
+                aa_allele_path = pangenome_alignments_dir_path + '/'+ gene + '/input/' 
                 aa_file=aa_allele_path +'pangenes.faa'
                 new_file=aa_allele_path +'pan_genes.faa'
                 na_file=aa_allele_path +'pangenes.fna'

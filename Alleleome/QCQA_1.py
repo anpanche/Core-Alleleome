@@ -2,6 +2,7 @@ import pandas as pd
 from Bio import SeqIO
 import os
 import logging
+
 def process_nucleotide_sequences(pangenome_alignments_dir_path,alleleome_dir_path):
     """
     Processes nucleotide sequences to compute the number of strains and gene length.

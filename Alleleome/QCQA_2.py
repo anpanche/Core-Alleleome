@@ -41,7 +41,7 @@ def analyze_gene_lengths(pangenome_alignments_dir_path,alleleome_dir_path):
         new_df = nuc_df.groupby(['Gene']).Length_of_allele.agg({'mean','std'})
         new_df['mean']=new_df['mean'].apply(lambda x:round(x,0))
         new_df['std']=new_df['std'].apply(lambda x:round(x,2))
-        new_df.to_csv(alleleome_dir_path +'core_nuc_alleles_with_mean_std.csv')
+        new_df.to_csv(os.path.join(alleleome_dir_path,'core_nuc_alleles_with_mean_std.csv'))
         df2 = nuc_df.merge(new_df, left_on=['Gene'], right_index=True)
         df2.to_csv(os.path.join(alleleome_dir_path, 'core_nuc_alleles_with_locus_mean_std.csv'))
         df2['mean_2std']=(df2['mean']- 2*df2['std'])

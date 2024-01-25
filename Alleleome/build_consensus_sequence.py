@@ -10,11 +10,11 @@ def build_consensus(pangenome_alignments_dir_path,alleleome_dir_path):
     try:
         logging.info("Starting build_consensus in build_consensus_sequence")
 
-        df = pd.read_csv(alleleome_dir_path + 'df_pangene_summary_v2.csv')
+        df = pd.read_csv(os.path.join(alleleome_dir_path + 'df_pangene_summary_v2.csv'))
         core_aa_query_list = (df['pangenome_class_2'].eq('Core').groupby(df['Gene']).any()).pipe(lambda x: x.index[x].tolist())
     
         for k in core_aa_query_list:
-            allele_file_path = pangenome_alignments_dir_path + k + '/input/' 
+            allele_file_path = pangenome_alignments_dir_path +'/'+ k + '/input/' 
             aa_allele = allele_file_path + 'pan_genes.faa'
             na_allele = allele_file_path + 'pan_genes.fna'
         
@@ -40,7 +40,7 @@ def generate_consensus(allele, k, type, pangenome_alignments_dir_path):
         file_suffix = 'nucleotide'
         ext = '.fna'
 
-    mafft_out_file = ''.join(pangenome_alignments_dir_path + k + '/output/' + 'mafft_' + file_suffix + '_' + k + '.fasta')
+    mafft_out_file = ''.join(pangenome_alignments_dir_path + '/'+ k + '/output/' + 'mafft_' + file_suffix + '_' + k + '.fasta')
     with open(mafft_out_file, "w") as handle:
         handle.write(stdout)
     
@@ -49,7 +49,7 @@ def generate_consensus(allele, k, type, pangenome_alignments_dir_path):
     consensus = summary.dumb_consensus(threshold=0.5)
     seq = str(consensus).upper()
     
-    consensus_file_path = os.path.join(pangenome_alignments_dir_path + k + '/input/' + file_suffix + '_consensus_' + k + ext)
+    consensus_file_path = os.path.join(pangenome_alignments_dir_path +'/' +k + '/input/' + file_suffix + '_consensus_' + k + ext)
     with open(consensus_file_path, 'w+') as consensus_file:
         consensus_seq = ''.join(['>' + k + '\n' + seq])        
         consensus_file.write(consensus_seq)

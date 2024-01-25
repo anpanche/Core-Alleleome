@@ -33,11 +33,11 @@ def codon_mut(pangenome_alignments_dir_path,alleleome_dir_path):
         logging.info("Starting codon_mut in codon_mutations")
 
         mutation_data = []
-        df=pd.read_csv(alleleome_dir_path +  'df_pangene_summary_v2.csv')
+        df=pd.read_csv(os.path.join(alleleome_dir_path, 'df_pangene_summary_v2.csv'))
         core_gene_list = (df['pangenome_class_2'].eq('Core').groupby(df['Gene']).any()).pipe(lambda x:x.index[x].tolist())
 
         for blast_out_file in core_gene_list:
-            blast_output_file_path = pangenome_alignments_dir_path + blast_out_file + '/output/' 
+            blast_output_file_path = pangenome_alignments_dir_path +'/'+ blast_out_file + '/output/' 
             blast_output_file = blast_output_file_path +'nucleotide_blast_out_'+ blast_out_file + '.xml'
             gene = blast_out_file.replace('nucleotide_blast_out_','').replace('.xml','')
 
