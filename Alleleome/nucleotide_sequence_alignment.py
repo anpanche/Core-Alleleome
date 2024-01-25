@@ -43,11 +43,11 @@ def nucleotide_seq_align(
         for r in range(len(core_na_query_list)):
             query = core_na_query_list[r]
             if pd.isnull(query) is False:
-                out_file_name = 
-                    pangenome_alignments_dir_path / query / "output" / ("nucleotide_"
-                    + "blast_out_"
-                    + query
-                    + ".xml"
+                out_file_name = (
+                    pangenome_alignments_dir_path
+                    / query
+                    / "output"
+                    / ("nucleotide_" + "blast_out_" + query + ".xml")
                 )
                 args = (
                     blast_path,
@@ -57,9 +57,7 @@ def nucleotide_seq_align(
                     pangenome_alignments_dir_path
                     / query
                     / "input"
-                    / ("nucleotide_consensus_"
-                    + query
-                    + ".fna"),
+                    / ("nucleotide_consensus_" + query + ".fna"),
                     "-outfmt",
                     "5",
                 )

@@ -4,6 +4,7 @@ from pathlib import Path
 import pandas as pd
 from Bio import SeqIO
 
+
 def process_sequences(pangenome_alignments_dir_path, alleleome_dir_path):
     """
     Processes both nucleotide and amino acid sequence files based on specific criteria.
@@ -29,7 +30,6 @@ def process_sequences(pangenome_alignments_dir_path, alleleome_dir_path):
                 seq_file = allele_path / f"pangenes.{file_type}"
                 new_file = allele_path / f"pan_genes.{file_type}"
                 with open(seq_file, "r") as file_in, open(new_file, "w") as file_out:
-
                     for seq_record in SeqIO.parse(file_in, "fasta"):
                         if seq_record.id not in locus_list:
                             desc = seq_record.description
