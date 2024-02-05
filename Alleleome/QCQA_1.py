@@ -51,8 +51,8 @@ def process_nucleotide_sequences(
                         "Gene": gene,
                         "Number_of_strains": count,
                     }
-        gene_df = pd.DataFrame(gene_data, index=[0])
-        genes_df = pd.concat([genes_df, gene_df])
+                    gene_df = pd.DataFrame(gene_data, index=[0])
+                genes_df = pd.concat([genes_df, gene_df])
 
         genes_df.to_csv(alleleome_dir_path / "Genes_nuc_length_number_of_strains.csv")
         num_strains = max(genes_df["Number_of_strains"])
